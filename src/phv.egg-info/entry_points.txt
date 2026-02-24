@@ -1,0 +1,2 @@
+[console_scripts]
+phv = phv.cli:main

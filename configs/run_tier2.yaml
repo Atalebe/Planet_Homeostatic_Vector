@@ -1,0 +1,38 @@
+run:
+  run_id: "PHV-TIER2-v1"
+  out_dir: "data/derived/tier2"
+
+inputs:
+  tier1_table: "data/derived/tier1_qclass/per_planet_table.csv"
+  tier1_summary: "data/derived/tier1_qclass/summary.json"
+  rocky_anchor_csv: "data/derived/tier1_qclass/rocky_anchor_8.csv"
+
+tier2:
+  mode: "hard"
+  require_rocky: true
+  require_in_window: true
+  # Class definitions
+  rocky_rmax_rearth: 1.8
+  subnep_rmax_rearth: 4.0
+
+  # Habitability-ish gates (adjust later)
+  require_age: true
+  S_min: 0.2
+  S_max: 2.0
+  Teq_min_K: 180.0
+  Teq_max_K: 300.0
+  e_max: 0.2
+
+  # Soft penalties (used only if mode=soft)
+  missing_penalty: 0.25     # multiply if key fields missing
+  soft_sigma_S: 0.7         # width in log-space
+  soft_sigma_T: 60.0        # K
+
+  # Ripeness mapping
+  age_scale_Gyr: 4.5        # cap time factor at Earth-scale
+  phi_closeness_power: 1.0  # optional exponent on C(phi)
+
+outputs:
+  write_candidates_csv: true
+  write_anchor_report: true
+  top_k: 100

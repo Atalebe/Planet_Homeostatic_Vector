@@ -1,0 +1,46 @@
+run:
+  run_id: "PHV-TIER4-v1"
+  out_dir: "data/derived/tier4"
+
+inputs:
+  tier3_enriched_csv: "data/derived/tier3/tier3_enriched.csv"
+  ps_csv: "data/raw/exoplanets/PS_2026.02.23_02.08.36.csv"
+
+tier4:
+  require_previous_pass: true
+
+  # Merge keys: Tier3 uses planet_id, PS uses pl_name
+  merge_key_left: "planet_id"
+  merge_key_right: "pl_name"
+  merge_how: "left"
+
+  # Keep only the columns we actually need for Tier4 followup scoring
+  ps_keep_columns:
+    - pl_name
+    - sy_dist
+    - sy_gaiamag
+    - sy_tmag
+    - sy_kmag
+    - sy_hmag
+    - sy_jmag
+    - sy_vmag
+    - sy_gmag
+    - sy_rmag
+    - sy_imag
+    - sy_zmag
+    - sy_w1mag
+    - sy_w2mag
+
+  # Followup score weights
+  w_depth: 0.5
+  w_brightness: 0.5
+
+  # Tier4 multiplier control
+  w_followup: 0.5
+  followup_factor_max: 1.5
+
+  # Heuristic flags
+  rho_min_g_cm3: 3.0
+  vesc_min_rel_earth: 1.0
+  Teq_min_K: 180.0
+  Teq_max_K: 300.0

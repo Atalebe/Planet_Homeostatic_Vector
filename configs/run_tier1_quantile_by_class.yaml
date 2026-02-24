@@ -1,0 +1,27 @@
+run:
+  run_id: "PHV-TIER1-qclass"
+  out_dir: "data/derived/tier1_qclass"
+
+inputs:
+  exoplanet_csv: "data/raw/exoplanets/PS_2026.02.23_02.08.36.csv"
+
+tier:
+  require_columns: ["pl_orbper","pl_orbsmax","st_teff","st_rad"]
+
+proxies:
+  F_mid_log10: 0.0
+
+weights:
+  w_R: 1.0
+  w_H: 1.0
+  w_M: 1.0
+  w_S: 1.0
+
+window:
+  mode: quantile_by_class
+  qlo: 0.40
+  qhi: 0.60
+
+diagnostics:
+  rocky_rmax_rearth: 1.8
+  subnep_rmax_rearth: 4.0

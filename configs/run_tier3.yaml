@@ -1,0 +1,22 @@
+run:
+  run_id: "PHV-TIER3-v1"
+  out_dir: "data/derived/tier3"
+
+inputs:
+  tier2_candidates_csv: "data/derived/tier2/tier2_candidates_ranked.csv"
+
+constants:
+  # Earth units
+  rho_earth_g_cm3: 5.514
+  g_earth_m_s2: 9.80665
+
+tier3:
+  # If true, keep only rows that passed Tier2
+  require_tier2_pass: true
+
+  # Derived quantity handling
+  # If true, compute density/g/vesc only when both mass and radius are present
+  strict_derived: true
+
+  # Score definition (start simple; upgrade later)
+  followup_factor_default: 1.0

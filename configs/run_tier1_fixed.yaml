@@ -1,0 +1,23 @@
+run:
+  run_id: "PHV-TIER1-fixed"
+  out_dir: "data/derived/tier1_fixed"
+
+inputs:
+  exoplanet_csv: "data/raw/exoplanets/PS_2026.02.23_02.08.36.csv"
+
+tier:
+  require_columns: ["pl_orbper","pl_orbsmax","st_teff","st_rad"]
+
+proxies:
+  F_mid_log10: 0.0
+
+weights:
+  w_R: 1.0
+  w_H: 1.0
+  w_M: 1.0
+  w_S: 1.0
+
+window:
+  mode: fixed
+  Phi_min: -0.25
+  Phi_max: 1.25
