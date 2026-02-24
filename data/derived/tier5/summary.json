@@ -1,0 +1,67 @@
+{
+  "run_id": "PHV-TIER5-v1",
+  "tier4_enriched_csv": "data/derived/tier4/tier4_enriched.csv",
+  "n_input": 1,
+  "n_output": 1,
+  "n_mc": 20000,
+  "seed": 12345,
+  "age_scale_gyr": 4.5,
+  "ps_merge": {
+    "did_merge": true,
+    "ps_csv": "data/raw/exoplanets/PS_2026.02.23_02.08.36.csv",
+    "selection_method": "closest_to_tier4",
+    "n_ps_rows_for_planets": 6,
+    "n_planets_selected": 1,
+    "err_nonnull_counts": {
+      "pl_radeerr1": 1,
+      "pl_radeerr2": 1,
+      "pl_bmasseerr1": 1,
+      "pl_bmasseerr2": 1,
+      "pl_eqterr1": 1,
+      "pl_eqterr2": 1,
+      "pl_insolerr1": 1,
+      "pl_insolerr2": 1,
+      "pl_orbeccenerr1": 0,
+      "pl_orbeccenerr2": 0,
+      "st_ageerr1": 0,
+      "st_ageerr2": 0
+    }
+  },
+  "ps_select_method": "closest_to_tier4",
+  "use_ps_errors": true,
+  "use_floors_when_missing": true,
+  "floors": {
+    "floor_frac_rade": 0.03,
+    "floor_frac_bmasse": 0.1,
+    "floor_frac_teq": 0.02,
+    "floor_frac_insol": 0.1,
+    "floor_abs_ecc": 0.02,
+    "floor_abs_age_gyr": 0.5
+  },
+  "gates": {
+    "S_min": 0.2,
+    "S_max": 2.0,
+    "Teq_min_K": 180.0,
+    "Teq_max_K": 300.0,
+    "e_max": 0.2,
+    "require_age": true,
+    "require_rocky": true,
+    "rocky_rmax_rearth": 1.8
+  },
+  "tier3": {
+    "rho_min_g_cm3": 3.0,
+    "rho_max_g_cm3": 10.0,
+    "vesc_min_rel_earth": 1.0
+  },
+  "tier4": {
+    "depth_ref": 0.005,
+    "mag_ref_min": 7.0,
+    "mag_ref_max": 13.0,
+    "alpha_factor": 0.5
+  },
+  "outputs": {
+    "tier5_scorecard_csv": "data/derived/tier5/tier5_scorecard.csv",
+    "tier5_mc_samples_csv": null
+  },
+  "timestamp_utc": "2026-02-23 19:15:32 UTC"
+}

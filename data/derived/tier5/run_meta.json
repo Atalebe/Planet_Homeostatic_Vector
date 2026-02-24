@@ -1,0 +1,8 @@
+{
+  "run_id": "PHV-TIER5-v1",
+  "config_path": "configs/run_tier5.yaml",
+  "tier4_enriched_csv": "data/derived/tier4/tier4_enriched.csv",
+  "tier4_sha256": "e89078ba6e77bf7231d8e80a385b907bb1d59e156f5c7cf2664da3ef77630c87",
+  "ps_csv": "data/raw/exoplanets/PS_2026.02.23_02.08.36.csv",
+  "ps_sha256": "97f92907f3272519f63aad1906488a02fa5dafe5e72ce2ce94617b6a5c9a1d4a"
+}

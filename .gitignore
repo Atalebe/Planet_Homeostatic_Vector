@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+data/derived/
+.DS_Store
+runs/
+logs/
+
+# Derived outputs (keep small scorecards if you want, ignore the rest)
+data/derived/**
+
+# Raw NASA archive downloads
+data/raw/**
+
+# Figures (optional: keep or ignore)
+# figures/**
