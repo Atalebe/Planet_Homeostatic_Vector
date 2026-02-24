@@ -1,16 +1,27 @@
-.venv/
+# --- Python junk ---
 __pycache__/
 *.pyc
-data/derived/
-.DS_Store
-runs/
-logs/
+*.pyo
+*.pyd
+.venv/
+.ipynb_checkpoints/
 
-# Derived outputs (keep small scorecards if you want, ignore the rest)
-data/derived/**
-
-# Raw NASA archive downloads
+# --- Data ---
+# Ignore raw archive downloads (big, reproducible by download script)
 data/raw/**
 
-# Figures (optional: keep or ignore)
-# figures/**
+# Ignore derived outputs by default...
+data/derived/**
+
+# ...but keep lightweight summaries, scorecards, run metadata, and diagnostics
+!data/derived/**/summary.json
+!data/derived/**/run_meta.json
+!data/derived/**/*scorecard*.csv
+!data/derived/**/ps_selection_diagnostic_*.csv
+
+# If you keep config snapshots in derived, allow them too (optional)
+#!data/derived/**/config_*.yaml
+
+# --- Figures ---
+# Track figures (do NOT ignore)
+# (nothing here)
